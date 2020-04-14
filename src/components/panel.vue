@@ -1,8 +1,11 @@
 <template>
     <div class="panel">
-        <h2>图标标题</h2>
         <!-- 柱状图插槽 -->
         <slot name="histogram"></slot>
+        <!-- 折线图 -->
+        <slot name="line"></slot>
+        <!-- 饼形图 -->
+        <slot name="pie"></slot>
         <div class="panel-footer"></div>
     </div>
 </template>

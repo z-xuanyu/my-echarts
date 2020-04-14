@@ -1,6 +1,9 @@
 .header {
     height: 1.25rem;
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
     background: url(../assets/images/head_bg.png) no-repeat top center;
     background-size: 100% 100%;
 
