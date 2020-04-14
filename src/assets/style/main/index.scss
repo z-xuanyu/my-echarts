@@ -1,0 +1,20 @@
+.main {
+    min-width: 1024px;
+    max-width: 1920px;
+    display: flex;
+    padding: 0.125rem 0.125rem 0;
+
+    .left {
+        flex: 3;
+    }
+
+    .center {
+        flex: 5;
+        margin: 0 0.125rem 0.1875rem;
+        overflow: hidden;
+    }
+
+    .right {
+        flex: 3;
+    }
+}

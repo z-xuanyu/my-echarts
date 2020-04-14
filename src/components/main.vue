@@ -1,25 +1,26 @@
 <template>
     <div class="main">
         <div class="left">
+            <!-- 柱状图 -->
             <v-panel>
-                <div slot="charts">
-                    <ve-histogram
-                        :settings="chartSettings"
-                        :legend-visible="show"
-                        :height="height"
-                        :data="chartData"
-                    ></ve-histogram>
-                </div>
+                <template slot="histogram">
+                    <v-histogram></v-histogram>
+                </template>
             </v-panel>
+            <!-- 折线图 -->
             <v-panel />
+            <!-- 饼形图 -->
             <v-panel />
         </div>
         <div class="center">
             <v-map />
         </div>
         <div class="right">
+            <!-- 柱状图 -->
             <v-panel />
+            <!-- 折线图 -->
             <v-panel />
+            <!-- 饼形图 -->
             <v-panel />
         </div>
     </div>
@@ -28,70 +29,16 @@
 <script>
 import vPanel from "./panel";
 import vMap from "./map";
+import vHistogram from "./charts/v-histogram";
 export default {
     components: {
         vPanel,
-        vMap
-    },
-    data() {
-        return {
-            height: "3.666667rem",
-            show: false,
-            chartData: {
-                columns: ["行业", "访问用户"],
-                rows: [
-                    {
-                        行业: "游戏行业",
-                        访问用户: 1393
-                    },
-                    {
-                        行业: "游戏行业",
-                        访问用户: 3530
-                    },
-                    {
-                        行业: "游戏行业",
-                        访问用户: 2923
-                    },
-                    {
-                        行业: "游戏行业",
-                        访问用户: 1723
-                    },
-                    {
-                        行业: "游戏行业",
-                        访问用户: 3792
-                    },
-                    {
-                        行业: "游戏行业",
-                        访问用户: 4593
-                    }
-                ]
-            },
-            chartSettings:{
-                xAxisType:'category',
-                opacity:0.6,
-                itemStyle:{
-                    barBorderRadius: [5, 5, 0, 0],
-                    color:'#f60',
-                }
-            }
-        };
+        vMap,
+        vHistogram
     }
 };
 </script>
 
 <style lang="scss" scoped>
-.main {
-    display: flex;
-    padding: 0.121212rem 0.121212rem 0;
-    .left {
-        flex: 3;
-    }
-    .center {
-        flex: 5;
-        margin: 0 0.121212rem;
-    }
-    .right {
-        flex: 3;
-    }
-}
+@import "@/assets/style/main/index.scss";
 </style>
